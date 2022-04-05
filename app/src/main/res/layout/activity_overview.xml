@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="inventoryViewModel"
+            type="com.mobile2app.inventoryapp.InventoryViewModel" />
+    </data>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".OverviewActivity">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_overview_inventory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="100dp"
+            tools:itemCount="15"
+            tools:layoutManager="StaggeredGridLayoutManager"
+            tools:listitem="@layout/fragment_item_card"
+            tools:spanCount="2"
+            />
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar_overview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:fabAlignmentMode="end"
+            app:menu="@menu/menu_overview_bottombar"
+            style="@style/Widget.MaterialComponents.BottomAppBar.Colored" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_overview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:contentDescription="@string/overview_fabDescription"
+            app:layout_anchor="@id/bottomAppBar_overview"
+            app:srcCompat="@drawable/ic_baseline_add_24"
+            />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

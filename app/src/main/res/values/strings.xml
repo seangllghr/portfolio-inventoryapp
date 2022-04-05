@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">InventoryApp</string>
+    <string name="all_companyName">ClientCompany, Inc</string>
+    <string name="login_button">LOG IN</string>
+    <string name="login_error_incomplete">Please enter a username and password</string>
+    <string name="login_error_failed">Login failed (bad password)</string>
+    <string name="login_password">Password</string>
+    <string name="login_subheader">InventoryApp Login</string>
+    <string name="login_showPassDescription">Show password</string>
+    <string name="login_username">Username</string>
+    <string name="login_error_nouser">User does not exist</string>
+    <string name="login_adduser">Add User</string>
+    <string name="adduser_header">Add New User</string>
+    <string name="adduser_confirm_password">Confirm password</string>
+    <string name="adduser_message">Please re-enter your new password to confirm:</string>
+    <string name="adduser_button_addUser">Add User</string>
+    <string name="adduser_button_cancel">Cancel</string>
+    <string name="login_confirmPassword">Confirm Password</string>
+    <string name="adduser_success">User added</string>
+    <string name="adduser_failed_noMatch">Passwords do not match</string>
+    <string name="overview_fabDescription">Add an item to inventory</string>
+    <string name="overview_menu_signOutHint">Sign out</string>
+    <string name="overview_menu_filterHint">Filter results</string>
+    <string name="overview_menu_alerts">Notification settings</string>
+    <string name="overview_menu_cancelSelect">Cancel selection</string>
+    <string name="overview_menu_multiDelete">Delete selected items</string>
+    <string name="itemCard_delete">Delete</string>
+    <string name="additem_header">Add Item</string>
+    <string name="additem_name">Item Name</string>
+    <string name="additem_category">Category</string>
+    <string name="additem_description">Description</string>
+    <string name="additem_count">Count</string>
+    <string name="additem_submit">Add Item</string>
+    <string name="additem_failed">Item missing name or count</string>
+    <string name="additem_success">Item added!</string>
+</resources>

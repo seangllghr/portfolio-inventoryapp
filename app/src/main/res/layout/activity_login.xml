@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="loginViewModel"
+            type="com.mobile2app.inventoryapp.LoginViewModel" />
+        <import type="android.view.View" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+        tools:context=".LoginActivity">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textview_login_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/all_companyName"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayout_login_username"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            style="@style/form_header" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textview_login_subheader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_subheader"
+            app:layout_constraintTop_toBottomOf="@+id/textview_login_header"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            style="@style/form_subheader" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout_login_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="false"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayout_login_password"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            style="@style/form_field">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditText_login_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="?attr/colorSurface"
+                android:hint="@string/login_username"
+                android:inputType="text"
+                android:text="@={loginViewModel.username}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout_login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleContentDescription="@string/login_showPassDescription"
+            app:passwordToggleEnabled="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            style="@style/form_field">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditText_login_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="?attr/colorSurface"
+                android:hint="@string/login_password"
+                android:inputType="textPassword"
+                android:text="@={loginViewModel.password}"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout_login_confirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{loginViewModel.addUser ? View.VISIBLE : View.GONE, default=gone}"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout_login_password"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            style="@style/form_field">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditText_login_confirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="?attr/colorSurface"
+                android:hint="@string/login_confirmPassword"
+                android:inputType="textPassword"
+                android:text="@={loginViewModel.confirmPassword}"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Login Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> loginViewModel.loginButtonClick(view)}"
+            android:text="@string/login_button"
+            android:visibility="@{loginViewModel.addUser ? View.GONE : View.VISIBLE}"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout_login_confirmPassword"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            style="@style/form_field" />
+
+        <!-- Add User Button-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_addUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> loginViewModel.addUserButtonClick(view)}"
+            android:text="@string/adduser_button_addUser"
+            android:visibility="@{loginViewModel.addUser ? View.VISIBLE : View.GONE, default=gone}"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout_login_confirmPassword"
+            app:layout_constraintLeft_toRightOf="@+id/button_cancel"
+            app:layout_constraintRight_toRightOf="parent"
+            style="@style/form_field" />
+
+        <!-- Cancel Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> loginViewModel.cancelButtonClick(view)}"
+            android:text="@string/adduser_button_cancel"
+            android:visibility="@{loginViewModel.addUser ? View.VISIBLE : View.GONE, default=gone}"
+            app:layout_constraintTop_toTopOf="@+id/button_addUser"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/button_addUser"
+            style="?attr/buttonBarNegativeButtonStyle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
