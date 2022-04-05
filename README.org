@@ -1,0 +1,26 @@
+#+TITLE: InventoryApp
+
+I wrote this simple inventory tracking app
+    for a course in mobile application development.
+It's not much to look at—it
+    certainly won't be winning any design awards,
+    and the database interaction is currently borked—but
+    it's a testament to my ability and willingness to learn new technologies.
+The course, textbook, and all of the supplemental materials
+    were written with Java in mind,
+    and, while I was scaffolding the XML for this application's UI,
+    I assumed I'd follow the beaten path and write the logic in Java.
+Once I got into actual development, however,
+    it became abundantly clear that Java's approach to asynchronicity
+    was lacking some critical quality of life features
+    that would make development substantially easier.
+Over the course of just two weeks,
+    and working without any prior exposure to the language,
+    I taught myself all of the Kotlin that this project employs—not
+    enough to make a solid argument that this is a finished product,
+    but enough to create this viable prototype,
+    and more than enough to demonstrate my capacity for technical growth.
+While there are a plethora of improvements I could make to “flesh out” the app
+    and bring it up to a truly professional standard,
+    I think its current state tells a more compelling story
+    of flexibility and adaptation under a substantial time constraint.
